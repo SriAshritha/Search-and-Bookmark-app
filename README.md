@@ -105,35 +105,48 @@ Then open [http://localhost:5173](link to the website)
 npm run lint
 ```
 
-Unit testing can be extended using React Testing Library or Vitest.
-A placeholder test configuration can be added later in /__tests__.
 
-🔍 Technical Advantages
-Focus Area	Implementation	Advantage
-Async Control	Debounced fetch() calls via useDebouncedValue	Prevents overlapping network requests
-State Management	Context + Reducer	Centralized, predictable updates
-Persistence	LocalStorage + Effect Sync	Offline data retention
-Performance	React.memo, useCallback, useMemo	Smooth rendering
-Scalability	Prop-based pure components	Reusable, extendable design
-Tooling	Vite + TypeScript + ESLint + Prettier	Modern, fast, type-safe setup
+### 🧪 Unit Testing
 
+Unit testing can be extended using **React Testing Library** or **Vitest**.  
+A placeholder test configuration can be added later in `/tests`.  
+Recommended coverage:
+- Search input debounce behavior
+- Reducer logic (`ADD`, `REMOVE`, `INIT`)
+- LocalStorage persistence
+- Rendering of bookmarked vs. unbookmarked states
 
-⚙️ Decisions & Trade-offs
-Decision	Rationale	Trade-off
-Used Context + Reducer instead of Redux	Lightweight and sufficient for local state; easy to extend later	Limited dev tooling compared to Redux
-Custom debounce hook	Full control over timing and cleanup	Slightly more manual implementation
-No UI library (Material/Tailwind)	Maintains transparency and minimal bundle size	Less visual polish
-LocalStorage persistence	Quick, stateless way to save user data	Not shareable across devices
-Vite build setup	Extremely fast dev + optimized build	Less conventional than CRA for beginners
+---
 
-🔮 Possible Next Steps
+## 🔍 Technical Advantages
 
-Pagination or Infinite Scroll – extend API calls with page parameters.
+| **Focus Area** | **Implementation** | **Advantage** |
+|----------------|--------------------|----------------|
+| **Async Control** | Debounced `fetch()` calls via `useDebouncedValue` | Prevents overlapping network requests |
+| **State Management** | Context + Reducer | Centralized, predictable updates |
+| **Persistence** | LocalStorage + Effect Sync | Offline data retention |
+| **Performance** | `React.memo`, `useCallback`, `useMemo` | Smooth rendering |
+| **Scalability** | Prop-based pure components | Reusable, extendable design |
+| **Tooling** | Vite + TypeScript + ESLint + Prettier | Modern, fast, type-safe setup |
 
-Dark/Light Theme Switch – add CSS variables + context-based theming.
+---
 
-GitHub OAuth Integration – authenticated bookmarks and user repositories.
+## ⚙️ Decisions & Trade-offs
 
-Unit Tests – coverage for search, bookmarking, and reducer logic.
+| **Decision** | **Rationale** | **Trade-off** |
+|---------------|---------------|---------------|
+| **Used Context + Reducer instead of Redux** | Lightweight and sufficient for local state; easy to extend later | Limited dev tooling compared to Redux |
+| **Custom debounce hook** | Full control over timing and cleanup | Slightly more manual implementation |
+| **No UI library (Material/Tailwind)** | Maintains transparency and minimal bundle size | Less visual polish |
+| **LocalStorage persistence** | Quick, stateless way to save user data | Not shareable across devices |
+| **Vite build setup** | Extremely fast dev + optimized build | Less conventional than CRA for beginners |
 
-Deployment – deploy on Vercel/Netlify for production demo.
+---
+
+## 🔮 Possible Next Steps
+
+1. **Pagination or Infinite Scroll** – extend API calls with page parameters.  
+2. **Dark/Light Theme Switch** – add CSS variables + context-based theming.  
+3. **GitHub OAuth Integration** – authenticated bookmarks and user repositories.  
+4. **Unit Tests** – coverage for search, bookmarking, and reducer logic.  
+5. **Deployment** – deploy on Vercel/Netlify for production demo.
