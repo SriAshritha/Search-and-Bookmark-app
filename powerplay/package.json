@@ -26,8 +26,6 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2",
-    "vite": "^5.0.0"
+    "typescript-eslint": "^8.46.2"
   }
 }
-
